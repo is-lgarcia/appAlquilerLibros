@@ -19,18 +19,18 @@ import com.example.alquilerlibros.modelo.Libro;
 public class DialogoAgregarLibros extends DialogFragment {
     public static final String TAG = "agregar_libro";
 
-    public interface OnAgregarLibroListener{
+    public interface OnAgregarLibroListener {
         void onAgregarLibro(Libro libro);
     }
 
-    private OnAgregarLibroListener listener;
+    OnAgregarLibroListener listener;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialogo_agregar_libro,null);
+        View view = inflater.inflate(R.layout.dialogo_agregar_libro, null);
 
         final EditText editTitulo = view.findViewById(R.id.edit_titulo);
         final EditText editISBN = view.findViewById(R.id.edit_isbn);
@@ -50,17 +50,18 @@ public class DialogoAgregarLibros extends DialogFragment {
             public void onClick(View v) {
                 String isbn = editISBN.getText().toString();
                 String titulo = editTitulo.getText().toString();
-                String autori = editAutor.getText().toString();
-                String genero = editGenero.getText().toString();
+                String autor = editAutor.getText().toString();
                 String editorial = editEditorial.getText().toString();
+                String generos = editGenero.getText().toString();
                 int paginas = Integer.parseInt(editPaginas.getText().toString());
-                if (!isbn.equals("")&& !titulo.equals("")&&!autori.equals("")
-                        &&!genero.equals("")&&!editorial.equals("")){
-                    Libro libro = new Libro(isbn,titulo,autori,editorial,genero,paginas);
+                if (!isbn.equals("") && !titulo.equals("") && !autor.equals("") &&
+                        !editorial.equals("") && !generos.equals("")){
+
+                    Libro libro = new Libro(isbn,titulo,autor,editorial,generos,paginas);
                     listener.onAgregarLibro(libro);
                     dismiss();
                 }else {
-                    Toast.makeText(getContext(), "Rellene todos los campos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Rellene todos los campos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
