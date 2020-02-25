@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Alquiler Libros</string>
+    <string name="action_settings">Ayuda</string>
+    <string name="isbn">ISBN</string>
+    <string name="titulo">Título</string>
+    <string name="autor">Autor</string>
+    <string name="editorial">Editorial</string>
+    <string name="generos">Géneros</string>
+    <string name="numero_paginas">Número de páginas</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_agregar">Agregar</string>
+    <string name="agregar_libro">Agregar Libro</string>
+    <string name="agregar">Agregar</string>
+    <string name="ayuda">Ayuda</string>
+</resources>
